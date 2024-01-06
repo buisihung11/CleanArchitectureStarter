@@ -2,6 +2,33 @@
 
 The project was generated using the [Clean.Architecture.Solution.Template](https://github.com/jasontaylordev/ApecProject) version 8.0.0.
 
+## Setup Development Environment
+
+### Prerequisites
+
+- .Net 8.0.0
+- Docker 
+
+### Run docker
+
+Move to the `src` folder of the project and run the following command:
+
+    ```bash
+    docker-compose up -d
+    ```
+
+This will setup the container for the Postgre and the pgAdmin.
+
+### Run migrations
+
+Move to the `src` folder of the project and run the following command:
+
+    ```bash
+     dotnet ef database update --project Infrastructure --startup-project Web 
+    ```
+
+This will create the database and the tables.
+
 ## Build
 
 Run `dotnet build -tl` to build the solution.
@@ -56,3 +83,4 @@ dotnet test
 
 ## Help
 To learn more about the template go to the [project website](https://github.com/JasonTaylorDev/ApecProject). Here you can find additional guidance, request new features, report a bug, and discuss the template with other users.
+

@@ -4,14 +4,24 @@ version: '3.1'
 
 services:
   db:
-    image: postgres:latest
+    image: postgres
     restart: always
     environment:
-      POSTGRES_PASSWORD: zaq@1234
+      POSTGRES_PASSWORD: zaQ@1234
       POSTGRES_USER: sa
       POSTGRES_DB: ApecSpaces
     ports:
-      - 1433:1433
+      - 5432:5432
     volumes:
       - ./data:/var/lib/postgresql/data
+  admin:
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: zaQ@1234
+    ports:
+      - 8080:80
 
+# Default connection string for Entity Framework
+# "Server=localhost;Port=1433;Database=ApecSpaces;User Id=sa;Password=zaq@1234;"

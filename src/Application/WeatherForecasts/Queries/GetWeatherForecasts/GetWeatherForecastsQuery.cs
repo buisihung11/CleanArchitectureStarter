@@ -1,4 +1,6 @@
-﻿namespace ApecProject.Application.WeatherForecasts.Queries.GetWeatherForecasts;
+﻿using ApecProject.Application.Common.Security;
+
+namespace ApecProject.Application.WeatherForecasts.Queries.GetWeatherForecasts;
 
 public record GetWeatherForecastsQuery : IRequest<IEnumerable<WeatherForecast>>;
 
