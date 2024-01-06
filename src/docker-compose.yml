@@ -1,0 +1,17 @@
+# Setup an PostgreSQL database
+
+version: '3.1'
+
+services:
+  db:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: zaq@1234
+      POSTGRES_USER: sa
+      POSTGRES_DB: ApecSpaces
+    ports:
+      - 1433:1433
+    volumes:
+      - ./data:/var/lib/postgresql/data
+
